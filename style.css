@@ -1,0 +1,115 @@
+body {
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
+    color: white;
+    flex-direction: column;
+}
+
+.carousel {
+    position: relative;
+    width: 80vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.main-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 60%;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    color: white;
+    margin: 40px 0px; /* Adjust the space around the H1 */
+    font-size: 4rem;
+}
+
+#mainImage {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-right: 20px; /* Space between image and description */
+}
+
+#mainDescription {
+    width: 50%; /* Adjust based on your layout preference */
+    height: 100%;
+    color: white;
+    font-size: 18px;
+    text-align: left;
+}
+
+#panelContainer {
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    width: 100%; /* Take full width of the carousel */
+    justify-content: flex-start; /* Align panels to the left */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 10px 0; /* Add padding for aesthetics */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.panel {
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.6; /* Slightly faded when not active */
+    display: inline-block;
+    margin: 0 5px; /* Space between panels */
+    position: relative;
+}
+
+/* Scrollbar styling */
+#panelContainer::-webkit-scrollbar {
+    height: 8px; /* Adjust the height for horizontal scrollbar */
+}
+
+#panelContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); /* Customize scrollbar color */
+    border-radius: 4px; /* Round corners */
+}
+
+#panelContainer::-webkit-scrollbar-track {
+    background: transparent; /* Track color */
+}
+
+.panel.active {
+    border: 2px solid #f00; /* Example active state styling */
+}
+
+.textboxes {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
